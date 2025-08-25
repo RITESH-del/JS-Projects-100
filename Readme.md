@@ -1,6 +1,6 @@
 # i need to do js projects from the link below `Deadline: 1 project before 10/Sept`
 https://javascript30.com/
-Inside of project-004 or JS project repository
+Inside of project-004 or JS-project-100 repository
 
 # Checkpoint
 At this point you should be able to add interactivity to your web pages using JavaScript. You should make sure that you have learnt the following:
