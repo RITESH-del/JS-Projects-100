@@ -34,7 +34,10 @@ input[type='text'] {
     border: 1px solid #999;
     border-radius: 5px;
     color: #007Bff linear-gradient( hsla(0,0%,100%), transparent);
+}
 
+button:hover {
+    cursor: pointer;
 }
 
 #Modal {
@@ -43,13 +46,15 @@ input[type='text'] {
 
 #list-container {
     height: 12.5em;
-    width: 20em;
+    width: 22.5em;
     border: 1px solid #bbb;
     margin-top: 5px;
     overflow-y: scroll;
 }
 
 #list-container li {
+    display: flex;
+    align-items: center;
     overflow:hidden;
     line-height: 2em;
     padding: 5px;
@@ -60,15 +65,15 @@ input[type='text'] {
 }
 
 #searchBtn {
-    position: absolute;
-    top: 5%;
-    left: 5%;
+    position: relative;
+    bottom: -9px;
 
 }
 
 input[type='checkbox'] {
     height: 15px;
     width: 15px;
+    float: left;
 }
 
 .editBtn{
@@ -80,5 +85,6 @@ input[type='checkbox'] {
 .deleteBtn {
     float: right;
     margin-right: 5px; 
-
 }
+
+
