@@ -7,6 +7,33 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+ <button id="searchBtn">Search</button>
+
+    <div id="Modal">
+        <input type="text" list="searchList">
+        <datalist id="searchList">
+            <option value=""></option>
+        </datalist>
+    </div>
+
+    <div id="Container">
+        <form>
+            <input type="text" name="Tasks" id="inputBar" placeholder="Enter a Task" value="doog">
+            <button type="submit" id="submitBtn">Add Tasks</button>
+        </form>
+
+        <ul id="list-container">
+            <li >
+               <input type='checkbox'> Element
+               <button class="deleteBtn">Delete</button>
+                <button class="editBtn">Edit</button>
+        </li>
+            
+          
+
+            
+        </ul>
+    </div>
     
 
 
