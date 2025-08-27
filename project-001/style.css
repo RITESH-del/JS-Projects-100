@@ -4,6 +4,17 @@
     box-sizing: border-box;
 }
 
+:root {
+    --primary-color: #5EABD6;
+    /* --secondary-color: ; */
+    --text-color: ;
+    /* --secondary-text-color: ; */
+    --border-color: #999;
+    /* --focused-border-color: #007Bff; */
+    
+    
+}
+
 /* need to add scrollbar css, and button styling like in css secrets  */
 
 html {
@@ -14,27 +25,35 @@ html {
 }
 
 input[type='text'] {
-    padding: 5px;
+    padding: .3em; /* .3 * 16 = 4.8px*/
     width: 18em; /* 16 * 16 = 256px*/
     height: 2.5em;
-    border: 1px solid #999;
+    border: 1px solid var(--border-color);
     border-radius: 3px;
     outline: none;
     transition: 0.3s ease;
 }
 
 #inputBar:focus {
-    border-color: #007Bff;
+    border-color: #0070ff;
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4)
 }
 
 #submitBtn, button {
-    padding: 5px;
+    padding: .3em .8em; /* .8 * 16 = 12.8px */
     height: 2.5em;
-    border: 1px solid #999;
+    border: 1px solid rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    color: #007Bff linear-gradient( hsla(0,0%,100%), transparent);
+    background: #0070ff linear-gradient( hsla(0,0%,100%, 0.2), transparent);
+    box-shadow: 0 .05em 0.25em rgba(0, 0, 0, 0.5);
+    color: white;
+    text-shadow: 0 -.05 .05 rgba(0, 0, 0, 0.5);
+    /* font-size: 125%; */
+    /* line-height: 1.5; */
+
 }
+
+
 
 button:hover {
     cursor: pointer;
@@ -46,18 +65,18 @@ button:hover {
 
 #list-container {
     height: 12.5em;
-    width: 22.5em;
+    width: 24em;
     border: 1px solid #bbb;
     margin-top: 5px;
     overflow-y: scroll;
 }
 
 #list-container li {
-    display: flex;
-    align-items: center;
+    /* display: flex;
+    align-items: center; */
     overflow:hidden;
     line-height: 2em;
-    padding: 5px;
+    padding: .3em;
 }
 
 #list-container li:hover {
@@ -66,25 +85,29 @@ button:hover {
 
 #searchBtn {
     position: relative;
-    bottom: -9px;
+    background: #F3F2EC linear-gradient( hsla(0,0%,100%, 0.2), transparent);
+    bottom: -8px;
 
 }
 
 input[type='checkbox'] {
     height: 15px;
     width: 15px;
+    /* middle align this checkbox */
     float: left;
+}
+
+
+.deleteBtn {
+    float: right;
+    margin-right: 5px; 
+    background: #ff0000 linear-gradient( hsla(0,0%,100%, 0.2), transparent);
 }
 
 .editBtn{
     float: right;
     margin-right: 5px; 
-
-}
-
-.deleteBtn {
-    float: right;
-    margin-right: 5px; 
+    background: #08CB00 linear-gradient( hsla(0,0%,100%, 0.2), transparent);
 }
 
 
