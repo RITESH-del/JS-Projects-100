@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -22,6 +24,7 @@ html {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
+    /* font-family: poppins; */
 }
 
 input[type='text'] {
@@ -30,11 +33,11 @@ input[type='text'] {
     height: 2.5em;
     border: 1px solid var(--border-color);
     border-radius: 3px;
-    outline: none;
+    outline: none; /*why ? */
     transition: 0.3s ease;
 }
 
-#inputBar:focus {
+input[type="text"]:focus {
     border-color: #0070ff;
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.4)
 }
@@ -60,7 +63,19 @@ button:hover {
 }
 
 #Modal {
-    display: none;
+    display: non;
+    position: absolute;
+    border-radius: 8px;
+    padding: .8em;
+    width: 18em;
+    height: 8em;
+    background: #fff;
+    background-image: linear-gradient(rgba(0,0,0,0.5) 20px,rgba(0, 0, 0, 0.3)  21px, rgba(0, 0, 0, 0.3)  22px, transparent 0);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    
+
 }
 
 #list-container {
@@ -109,5 +124,32 @@ input[type='checkbox'] {
     margin-right: 5px; 
     background: #08CB00 linear-gradient( hsla(0,0%,100%, 0.2), transparent);
 }
+
+.header {
+    position: relative;
+    top: -10px;
+    right: 10px;
+    /* font-family: inherit; */
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+}
+
+.EditTaskBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+
+.EditTaskBtn button:nth-child(2) {
+    background: #ff0000 linear-gradient(hsla(0, 0%, 100%, 0.2), transparent);
+}
+
+.EditTaskBtn button {
+    background: #08CB00 linear-gradient( hsla(0, 0%, 100%, 0.2), transparent);
+    margin-right: 20px;
+}
+
 
 
