@@ -48,7 +48,13 @@ const addTasks = (event) =>{
 
 function editTask(li) {
     // Implement edit logic here
-    alert('Edit clicked');
+    const listValue = document.getElementById("editTaskBar");
+
+    const directText = (li) =>  li.cloneNode(true);
+    // .childNodes.remove().textContent;
+
+    console.log(directText);
+    
 }
 
 function deleteTask(li) {
@@ -58,7 +64,7 @@ function deleteTask(li) {
 
     const directText = Array.from(li.childNodes) //extract all the direct decendentants child node(element, text, attribute, style nodes) of the element
   .filter(node => node.nodeType === Node.TEXT_NODE) // filter all the textnode  
-  .map(node => node.nodeValue.trim()) // Extract the text content of the element and trim any unnessecarry whitespaces
+  .map(node => node.nodeValue.trim()) // Extract the text content of the element and trim any unnessecarry whitespaces and add them to an copy of the original array
   .join(' '); //combines the textnode into a single string
 
 //   console.log(directText);
