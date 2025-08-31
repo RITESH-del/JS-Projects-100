@@ -3,6 +3,41 @@ const arr = [];
 
 const submitBtn = document.getElementById('submitBtn');
 
+function renderTasksFromStorage() {
+    let ul = document.getElementById('list-container');
+    ul.innerHTML = ''; // Clear existing list
+    let tasks = JSON.parse(localStorage.getItem('Tasks')) || [];
+    tasks.forEach(task => {
+        const li = document.createElement('li');
+        li.textContent = task;
+
+        const editBtn = document.createElement('button');
+        editBtn.textContent = 'Edit';
+        editBtn.classList.add('editBtn');
+        editBtn.onclick = () => editTask(li);
+
+        const deleteBtn = document.createElement('button');
+        deleteBtn.textContent = 'Delete';
+        deleteBtn.classList.add('deleteBtn');
+        deleteBtn.onclick = () => deleteTask(li);
+
+        const checkBox = document.createElement('input');
+        checkBox.type = 'checkbox';
+        checkBox.onclick = () => checkedTask(li, checkBox);
+
+        li.appendChild(checkBox);
+        li.appendChild(deleteBtn);
+        li.appendChild(editBtn);
+        ul.appendChild(li);
+    });
+}
+
+// Call this when the page loads
+window.onload = renderTasksFromStorage;
+
+function search(){ // search function
+
+}
 
 
 const addTasks = (event) =>{
@@ -42,30 +77,64 @@ const addTasks = (event) =>{
     li.appendChild(deleteBtn);
     li.appendChild(editBtn);
 }
-    
+    const inputElement = document.getElementById('inputBar');
+    inputElement.value = '';
     event.preventDefault();
 };
 
+let currentLi = null;
+// Edit button functionality
 function editTask(li) {
-    // Implement edit logic here
-    const listValue = document.getElementById("editTaskBar");
-
-    const directText = (li) =>  li.cloneNode(true);
-    // .childNodes.remove().textContent;
-
-    console.log(directText);
+    currentLi = li
+    let directText = li.childNodes[0].nodeValue;
     
+    const listValue = document.getElementById("editTaskBar");
+    listValue.value = directText; //changing the EditTaskBar value
+
+    document.getElementById('Modal').style.display = 'block'; //display the modal 
+    // console.log(directText);    
 }
+
+// Okay button functionality
+document.getElementById("okayBtn")
+.addEventListener('click', () => {
+    const editedValue = document.getElementById("editTaskBar").value;
+    if (currentLi) {
+        currentLi.childNodes[0].nodeValue = editedValue;
+
+//changing its value in localStorage
+    let newArray = JSON.parse(localStorage.getItem('Tasks'));
+    let directText = currentLi.childNodes[0].nodeValue;
+    let index = newArray.indexOf(directText);
+    if (index !== -1) {
+        newArray.splice(index, 1, editedValue)
+    }
+    localStorage.removeItem('Tasks');
+    localStorage.setItem('Tasks', JSON.stringify(newArray));
+
+
+
+    }
+    document.getElementById('Modal').style.display = 'none';
+});
+
+
+
+
+//EditModal cancel button functionality
+ document.getElementById("CancelBtn")
+ .addEventListener("click",()=>{
+    document.getElementById('Modal').style.display = 'none'; //hide the modal 
+
+    })
 
 function deleteTask(li) {
 
-    const newArray = JSON.parse(localStorage.getItem('Tasks')); // created a new array to remove a particular task
+    let newArray = JSON.parse(localStorage.getItem('Tasks')); // created a new array to remove a particular task
     // console.log(newArray);
 
-    const directText = Array.from(li.childNodes) //extract all the direct decendentants child node(element, text, attribute, style nodes) of the element
-  .filter(node => node.nodeType === Node.TEXT_NODE) // filter all the textnode  
-  .map(node => node.nodeValue.trim()) // Extract the text content of the element and trim any unnessecarry whitespaces and add them to an copy of the original array
-  .join(' '); //combines the textnode into a single string
+    let directText = li.childNodes[0].nodeValue;
+    
 
 //   console.log(directText);
 
