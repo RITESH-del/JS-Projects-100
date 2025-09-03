@@ -173,14 +173,13 @@ document.querySelector("button.search-button").addEventListener('click',(event)=
     // document.getElementById("search-container").style.display = "none";
     const searchValue = document.querySelector(".search-input").value;
     Search(searchValue);
-    event.preventDefault();
 })
 
 
 function Search(searchValue){ // search function 
     let newArray = JSON.parse(localStorage.getItem("Tasks")) || [];
     // console.log(newArray);
-    const result = newArray.find((value,index) => searchValue.toLowerCase() === value.toLowerCase());
+    const result = newArray.find((value) => searchValue.toLowerCase() === value.toLowerCase());
 
     if (result === undefined) {
         document.getElementById("searchValue").textContent = "No such task exist";
@@ -189,13 +188,13 @@ function Search(searchValue){ // search function
         document.getElementById("search-container").style.display = 'none';
 
         //here, u have to implement the changing index functionality basically, 
-        // push the indexof value with arr[0], push then re render
-        newArray.push()
-       
-        localStorage.remove("Tasks");
+        // push the indexof value in newArray, push then re render
+        const index = newArray.indexOf(result);
+        newArray.splice(index,1); // removing the result element
+        newArray.unshift(result); // adding the result element at arr[0]/first position
 
-        
-
+        localStorage.setItem("Tasks",JSON.stringify(newArray)); //overwrite tasks value
+        renderTasksFromStorage(); //re-render the todo app, for updating list-container
     }
 
 
