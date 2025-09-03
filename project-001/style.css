@@ -27,6 +27,10 @@ html {
     /* font-family: poppins; */
 }
 
+.search-input {
+    max-width: 18em;
+}
+
 input[type='text'] {
     padding: .3em; /* .3 * 16 = 4.8px*/
     width: 18em; /* 16 * 16 = 256px*/
@@ -77,9 +81,6 @@ button:hover {
     transition: .3s;
 }
 
-.Modal {
-    display: block;
-}
 
 #list-container {
     height: 12.5em;
@@ -160,3 +161,25 @@ section {
     border-radius: 5px;
 }
 
+.search-container {
+    display: none;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.8em; /* .8 * 16 = 13.8px */
+    border: 1px solid rgba(0, 0, 0, 0.3);
+    border-radius: 5px;
+    background: #fff;
+    max-width: 22.5em;
+    z-index: 1000;
+}
+
+
+
+#searchValue {
+    height: 4em;
+    width: 18em;
+    overflow-y: scroll;
+
+}

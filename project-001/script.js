@@ -35,9 +35,7 @@ function renderTasksFromStorage() {
 // Call this when the page loads
 window.onload = renderTasksFromStorage;
 
-function search(){ // search function
 
-}
 
 
 const addTasks = (event) =>{
@@ -156,4 +154,51 @@ function checkedTask(li, checkBox) {
     } else {
         li.style.textDecoration = 'none';
     }
+}
+
+const searchBtn = document.getElementById("searchBtn");
+// search.onclick = function(event) {
+//     document.getElementById("search-container").style.display = 'block';
+//     event.preventDefault();
+// }
+
+// opening the search modal
+searchBtn.addEventListener('click', (event)=>{
+    document.getElementById("search-container").style.display = 'block';
+    event.preventDefault();
+})
+
+// closing the search modal
+document.querySelector("button.search-button").addEventListener('click',(event)=>{
+    // document.getElementById("search-container").style.display = "none";
+    const searchValue = document.querySelector(".search-input").value;
+    Search(searchValue);
+    event.preventDefault();
+})
+
+
+function Search(searchValue){ // search function 
+    let newArray = JSON.parse(localStorage.getItem("Tasks")) || [];
+    // console.log(newArray);
+    const result = newArray.find((value,index) => searchValue.toLowerCase() === value.toLowerCase());
+
+    if (result === undefined) {
+        document.getElementById("searchValue").textContent = "No such task exist";
+    }else {
+        document.getElementById("searchValue").textContent = "task found";
+        document.getElementById("search-container").style.display = 'none';
+
+        //here, u have to implement the changing index functionality basically, 
+        // push the indexof value with arr[0], push then re render
+        newArray.push()
+       
+        localStorage.remove("Tasks");
+
+        
+
+    }
+
+
+
+
 }

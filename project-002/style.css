@@ -1,0 +1,33 @@
+:root {
+  --font-size: 24px;
+    
+}
+
+.Parent-Container {
+  display: flex;
+  place-items: center;
+  flex-direction: column;
+  
+}
+
+input {
+  padding: 10px;
+  font-size: var(--font-size);
+  box-sizing: border-box;
+  line-height: 1.25 * var(--font-size);
+  display: block;
+  width: 25%;
+  margin: 10px 0px;
+}
+
+.Container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 25%;
+}
+button {
+  height: 40px;
+  font-size: var(--font-size);
+}
+
