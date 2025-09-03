@@ -194,9 +194,8 @@ function Search(searchValue){ // search function
         newArray.unshift(result); // adding the result element at arr[0]/first position
 
         localStorage.setItem("Tasks",JSON.stringify(newArray)); //overwrite tasks value
-        renderTasksFromStorage(); //re-render the todo app, for updating list-container
+        renderTasksFromStorage(); //re-render the todo app, for updating list-container again
     }
-
 
 
 
