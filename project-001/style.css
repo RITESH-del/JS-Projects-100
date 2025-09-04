@@ -99,7 +99,7 @@ button:hover {
 }
 
 #list-container li:hover {
-    background: rgba(70, 108, 211, 0.3)
+    background: rgba(70, 108, 211, 0.3);
 }
 
 #searchBtn {

@@ -170,7 +170,6 @@ searchBtn.addEventListener('click', (event)=>{
 
 // closing the search modal
 document.querySelector("button.search-button").addEventListener('click',(event)=>{
-    // document.getElementById("search-container").style.display = "none";
     const searchValue = document.querySelector(".search-input").value;
     Search(searchValue);
 })
@@ -193,10 +192,14 @@ function Search(searchValue){ // search function
         newArray.splice(index,1); // removing the result element
         newArray.unshift(result); // adding the result element at arr[0]/first position
 
-        localStorage.setItem("Tasks",JSON.stringify(newArray)); //overwrite tasks value
+        localStorage.setItem("Tasks",JSON.stringify(newArray)); //overwriting tasks value
         renderTasksFromStorage(); //re-render the todo app, for updating list-container again
+
+//highlighting effect atlast
+        document.getElementById("list-container").children[0].style.cssText = "background:rgba(70, 108, 211, 0.3); transition: background 0.8s ease-in 0.3s";
+        setTimeout(()=>{
+        document.getElementById("list-container").children[0].style.cssText = "background: #fff; transition: background 0.8s ease-out;";
+        },1200);
+        
     }
-
-
-
 }
