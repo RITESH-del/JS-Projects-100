@@ -1,0 +1,143 @@
+/* Impement liquid layouts and relative sizing for text  */
+@import url('https://fonts.googleapis.com/css2?family=Mozilla+Headline:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --primary-color:  #f4f6f9;
+    --secondary-color: #343a40; 
+    --header-color: #4CAF50;
+    --h2-color: #0070ff;
+    --text-color: #444;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background: var(--primary-color);
+}
+
+header {
+    background: var(--header-color);
+    text-align: center;
+    padding: 20px 0;
+    color: white;
+}
+
+header h1 {
+    margin-bottom: 20px;
+   
+}
+
+#top-navbar {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    font-weight: 400;
+    font-size: 1.125rem; /* 16 * 1.125 = 18px*/
+    padding: 10px 0px;
+    background: var(--secondary-color);
+    list-style-type: none;
+}
+
+
+#top-navbar li a {
+    color: white;
+    text-decoration: none;
+}
+
+#top-navbar li a:hover {
+    /* border-bottom: 2px solid #fff; */
+    text-decoration: underline;
+    color: tomato;
+    /* transition: text-decoration 0.3s ease-out 0.1s; */
+}
+
+
+section {
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 10px;
+    box-shadow: 2px 3px 5px rgba(0,0,0, 0.5); /* it would make sense to use em units in button but, not here*/
+    padding: 30px 20px;
+    margin: 20px 30px;
+}
+
+h2 {
+    color: var(--h2-color);
+}
+
+table,td, th {
+    border: 1px solid rgba(0,0,0,0.2);
+    border-collapse: collapse;
+    padding: 5px;
+}
+
+table {
+    width: 100%;
+}
+
+table thead {
+    background: #f1f1f1;
+}
+
+table tr:nth-child(even) {
+    background: #f9f9f9;
+}
+
+#Speakers {
+    line-height: 2;
+}
+
+
+#Speakers ul {
+    list-style-type: none;
+}
+
+#Speakers ul li b {
+    color: var(--h2-color);
+}
+
+form {
+    /* margin: 20px; */
+    padding: 20px 60px;
+}
+
+input[type="text"],textarea {
+    padding: .8em;
+    width: 100%;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-radius: 3px;
+}
+
+textarea:focus, input[type="text"]:focus {
+    border: 1px solid #007bff !important;  /* for higher specificity */
+    /* background: lightyellow; */
+    outline: none;
+}
+
+#Contacts button {
+    width: 100%;
+    text-align: center;
+    font-weight: 400;
+    color: white;
+    background: var(--h2-color) linear-gradient(rgba(0,0,0,0.1), transparent);
+    border: 1px solid rgba(0,0,0,0.2);
+    border-radius: .2em;
+    font-size: 1.125em;
+    padding: .8em;
+    text-shadow: 0 -0.5em 1em rgba(0,0,0,0.5);
+    box-shodow: 0.2em 0.3em 0.8em rgba(0,0,0,0.5);
+}
+
+#Contacts button:hover {
+    cursor: pointer;
+    background: ;
+}
+
+/* write the difference between pseudo-classes and element */
+

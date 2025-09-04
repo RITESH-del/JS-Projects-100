@@ -13,6 +13,9 @@ At this point you should be able to add interactivity to your web pages using Ja
 * Create a simple webpage where user can put in anyone's GitHub username and see their profile information. You can use GitHub's API to fetch the data. For example, here is the sample URL to fetch my data. Make sure to add validation and error handling.
 * Create a basic calculator app that allows users to perform basic arithmetic operations.
 
+- [ ] add DRY css in project-002 and implement liquid layout and relative sizing
+- [ ] add keyboard controls for the calculator/project-002
+
 Some tips to keep in mind for creating liquid layouts and relative sizing between media-queries break-points?
 
 ![alt text](image.png)

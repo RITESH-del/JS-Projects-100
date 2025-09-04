@@ -1,0 +1,1 @@
+> need to add a proper modal with content center and background blur and a lot more.
