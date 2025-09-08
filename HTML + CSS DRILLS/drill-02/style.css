@@ -1,0 +1,72 @@
+/* To create a parallax effect create a container element
+with a specific height. Then use background-attachment: fixed;
+to create the actual parallax effect, And The other background 
+properties are used to center and scale the image perfectly */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%; /* *imp for giving height in % to parallax*/
+    font-family: sans-serif;font-size: 14px;
+
+}
+
+.parallax-1, .parallax-2, .parallax-3 {
+    background-image:  url("https://img.freepik.com/premium-photo/beautiful-sunset-mountain-lake-k-real-photo_1078199-14968.jpg");
+    background-attachment: fixed; /* it is used to create parallax effect */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100%; 
+}
+
+.parallax-2 {
+    background-image: url("https://static.clideo.com/files/content/506/twilight-photography-tips.jpeg");
+}
+
+.parallax-3 {
+    background-image: url("https://static.vecteezy.com/system/resources/thumbnails/025/221/284/small_2x/picture-a-captivating-scene-of-a-tranquil-lake-at-sunset-ai-generative-photo.jpg");
+}
+
+.parallax-1:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 300%;
+    width: 100%;
+    background: rgba(255,255,255,0.3);
+}
+
+
+.Content-1, .Content-2 {
+    height: 30%;
+    color: white;
+    position: absolute;
+    top: 100%;
+    background: rgba(0,0,0,0.5);
+    padding: 30px 20px;
+    font-size: 1rem;
+    z-index: 1000;
+}
+
+.Content-2 {
+    top: 200%;
+    height: 45%;
+    background: rgba(255,255,255,0.5);
+    color: #000;
+}
+
+.Bigheading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: clamp(1rem, 2.25rem + 2vw, 5rem);
+    font-weight: 600;
+    color: rgba(255,255,255,0.8);
+    transform: translate(-50%, -50%);
+}

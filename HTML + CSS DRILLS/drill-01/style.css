@@ -114,6 +114,11 @@ input[type="text"],textarea {
     border-radius: 3px;
 }
 
+textarea {
+    height: 30vh;
+    max-width: intial;
+}
+
 textarea:focus, input[type="text"]:focus {
     border: 1px solid #007bff !important;  /* for higher specificity */
     /* background: lightyellow; */
@@ -131,7 +136,7 @@ textarea:focus, input[type="text"]:focus {
     font-size: 1.125em;
     padding: .8em;
     text-shadow: 0 -0.5em 1em rgba(0,0,0,0.5);
-    box-shodow: 0.2em 0.3em 0.8em rgba(0,0,0,0.5);
+    box-shadow: 0.12em 0.1875em 0.3em rgba(0,0,0,0.5);
 }
 
 #Contacts button:hover {
