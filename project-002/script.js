@@ -36,7 +36,30 @@ arr.forEach((value) => {
 
 const display =  document.getElementById("Display");
 
-// display.addEventListener("keydown",(event)=>{
-//   return display.value = event.code
-// });
+debugger;
+
+document.addEventListener("keydown",(event)=>{
+  if (event.key === "Space") {
+      inputValue = "";
+    } else if(event.key === "Backspace") {
+      inputValue = inputValue.slice(0,-1);
+    }
+    else if (event.key === "=" || event.key === "Enter") {
+      try {
+        inputValue = eval(inputValue);
+      } catch (error) {
+        console.log("Unexpected input");
+      }
+    } else {
+      inputValue += event.key;
+    }
+    document.getElementById("Display").value = inputValue;
+
+
+  // console.log(`Key pressed: ${event.key}`);
+})
+
+
+
+ 
 
