@@ -41,8 +41,9 @@ function winLogic() {
       showTurn.textContent = "#Player-1 wins";
     } else {
       showTurn.textContent = "#Player-2 wins";
-      
     }
+    Disable();
+
     
   }
   //   2
@@ -109,5 +110,15 @@ function winLogic() {
     }
   }
 
+
+
 }
+
+
+async function Disable() {
+const button = document.getElementByTagName("button");
+if (showTurn.textContent === "#Player-1 wins" || showTurn.textContent === "#Player-2 wins") {
+  button.setAttribute("disabled", "true");
+}}
+
 

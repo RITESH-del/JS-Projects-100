@@ -39,7 +39,7 @@ const display =  document.getElementById("Display");
 // debugger;
 
 document.addEventListener("keydown",(event)=>{
- const regExp = /[0-9%+-/*=]/; // /pattren/flags + chracter classes
+ const regExp = /[0-9%+-/*=]/; // /pattren/flags + chracter classes, are used to filter inputs
 if(regExp.test(event.key) | event.key === 'Space'| event.key === 'Backspace'  | event.key === 'Enter'){
 
   
@@ -65,7 +65,7 @@ if(regExp.test(event.key) | event.key === 'Space'| event.key === 'Backspace'  | 
   // console.log(`Key pressed: ${event.key}`);
 })
 
-// leran about regular expression and how to take numeric only input using them
+// learn about regular expression and how to take numeric only input using them
 
  
 
